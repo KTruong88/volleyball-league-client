@@ -1,4 +1,5 @@
 import React from 'react'
+import Teams from './Teams'
 import {
   Collapse,
   Navbar,
@@ -31,12 +32,14 @@ export default class Navigation extends React.Component {
   }
 
   render() {
+    const { isOpen } = this.state
+
     return (
       <div>
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">RB Volleyball</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
+          <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink href="/courts/">Courts</NavLink>
